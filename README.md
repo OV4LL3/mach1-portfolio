@@ -158,4 +158,63 @@ Aquí no se publican:
 * Estados de cuenta reales.
 * Contraseñas.
 * Bases de datos privadas.
-* Datos confidenciales..
+* Datos confidenciales.
+
+## 🧩 Retos técnicos y soluciones
+
+Durante el desarrollo de MACH 1 han surgido distintos problemas relacionados con procesamiento documental, calidad de datos, arquitectura y mantenimiento del software.
+
+Algunos de los retos trabajados hasta ahora son:
+
+### Extracción de información desde diferentes formatos bancarios
+
+Los estados de cuenta no mantienen una estructura uniforme entre instituciones y productos.
+
+**Solución aplicada:**
+Se desarrolló una arquitectura de parsers especializados por institución bancaria, complementada con mecanismos de detección y normalización de información.
+
+---
+
+### Información difícil de recuperar desde PDFs
+
+Algunos documentos contienen información que no puede extraerse correctamente utilizando únicamente texto nativo.
+
+**Solución aplicada:**
+Se desarrolló un enfoque multicapa que combina extracción de texto, análisis de estructura/layout y OCR dirigido sobre regiones específicas del documento.
+
+---
+
+### Normalización y calidad de datos
+
+La información extraída puede contener formatos distintos de fechas, descripciones, valores monetarios o caracteres dañados.
+
+**Solución aplicada:**
+Se implementaron procesos de limpieza, normalización y validación antes de persistir la información.
+
+---
+
+### Separación de responsabilidades
+
+A medida que MACH 1 creció, concentrar toda la lógica en pocos archivos habría dificultado las pruebas y el mantenimiento.
+
+**Solución aplicada:**
+El sistema evolucionó hacia una arquitectura por capas utilizando rutas, servicios, repositorios, modelos y componentes especializados.
+
+---
+
+### Prevención de regresiones
+
+Los cambios realizados en parsers, servicios o persistencia pueden afectar funcionalidades previamente estables.
+
+**Solución aplicada:**
+Se incorporaron pruebas automatizadas con pytest y validaciones continuas para detectar regresiones durante la evolución del proyecto.
+
+---
+
+### Evolución de la persistencia de datos
+
+El proyecto inició utilizando SQLite como solución local y posteriormente evolucionó hacia PostgreSQL para disponer de una base de datos más adecuada para crecimiento y operación futura.
+
+**Solución aplicada:**
+Se incorporaron PostgreSQL, SQLAlchemy y migraciones de esquema mediante Alembic.
+
