@@ -218,3 +218,28 @@ El proyecto inició utilizando SQLite como solución local y posteriormente evol
 **Solución aplicada:**
 Se incorporaron PostgreSQL, SQLAlchemy y migraciones de esquema mediante Alembic.
 
+## 🖥️ Capturas del proyecto
+
+### Pantalla principal
+
+MACH 1 permite cargar un estado de cuenta bancario en PDF e iniciar el proceso de identificación y análisis de la información.
+
+![Pantalla principal de MACH 1](docs/screenshots/mach1_inicio.png)
+
+---
+
+### Procesamiento y validación de movimientos
+
+Después de procesar el documento, MACH 1 presenta la información financiera detectada y permite revisar, validar o corregir los movimientos antes de almacenarlos definitivamente.
+
+![Validación de movimientos](docs/screenshots/mach1_validacion_movimientos.png)
+
+---
+
+### Dashboard financiero global
+
+La información procesada puede analizarse posteriormente mediante dashboards que muestran evolución financiera, ingresos, gastos, categorías, comercios y movimientos.
+
+![Dashboard financiero global](docs/screenshots/mach1_dashboard_global.png)
+
+> Las capturas utilizan información anonimizada. Los identificadores personales y bancarios se encuentran ocultos o enmascarados.
