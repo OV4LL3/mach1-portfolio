@@ -158,4 +158,4 @@ Aquí no se publican:
 * Estados de cuenta reales.
 * Contraseñas.
 * Bases de datos privadas.
-* Datos confidenciales.
+* Datos confidenciales..
