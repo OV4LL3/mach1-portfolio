@@ -220,26 +220,52 @@ Se incorporaron PostgreSQL, SQLAlchemy y migraciones de esquema mediante Alembic
 
 ## 🖥️ Capturas del proyecto
 
-### Pantalla principal
+Las siguientes imágenes muestran diferentes etapas del funcionamiento actual de MACH 1.
 
-MACH 1 permite cargar un estado de cuenta bancario en PDF e iniciar el proceso de identificación y análisis de la información.
-
-![Pantalla principal de MACH 1](docs/screenshots/mach1_inicio.png)
+> Las capturas utilizan información anonimizada y los identificadores personales o bancarios se encuentran ocultos o enmascarados.
 
 ---
 
-### Procesamiento y validación de movimientos
+### 1. Pantalla principal
 
-Después de procesar el documento, MACH 1 presenta la información financiera detectada y permite revisar, validar o corregir los movimientos antes de almacenarlos definitivamente.
+MACH 1 permite cargar un estado de cuenta bancario en formato PDF e iniciar automáticamente el proceso de identificación de institución, producto y tipo de cuenta antes de analizar sus movimientos.
 
-![Validación de movimientos](docs/screenshots/mach1_validacion_movimientos.png)
+![Pantalla principal de MACH 1](docs/screenshots/MACH1_Inicio.png)
 
 ---
 
-### Dashboard financiero global
+### 2. Identificación y procesamiento del estado de cuenta
 
-La información procesada puede analizarse posteriormente mediante dashboards que muestran evolución financiera, ingresos, gastos, categorías, comercios y movimientos.
+Después de analizar el documento, MACH 1 identifica la cuenta bancaria y permite revisar la información detectada antes de continuar con el procesamiento financiero.
 
-![Dashboard financiero global](docs/screenshots/mach1_dashboard_global.png)
+Esta etapa forma parte del flujo de validación diseñado para evitar que información incorrecta sea almacenada automáticamente.
 
-> Las capturas utilizan información anonimizada. Los identificadores personales y bancarios se encuentran ocultos o enmascarados.
+![Procesamiento de estado de cuenta](docs/screenshots/MACH1_reporte%20procesado.png)
+
+---
+
+### 3. Historial de estados de cuenta
+
+Los documentos procesados quedan organizados por cuenta bancaria, permitiendo consultar diferentes periodos históricos y acceder posteriormente a sus detalles y análisis.
+
+![Historial de estados de cuenta](docs/screenshots/MACH1_historial.png)
+
+---
+
+### 4. Dashboard financiero global
+
+La información estructurada puede analizarse mediante dashboards que muestran ingresos, gastos, balance, movimientos, evolución temporal, categorías y comercios.
+
+Esta capa transforma los datos procesados en información visual que facilita su interpretación.
+
+![Dashboard financiero global](docs/screenshots/MACH1_dashboard_global.png)
+
+---
+
+### 5. Administración y mantenimiento
+
+MACH 1 también incorpora herramientas administrativas para supervisar cuentas, reportes, movimientos almacenados, tamaño de la base de datos y respaldos.
+
+El sistema permite crear y restaurar respaldos, además de ejecutar operaciones controladas de mantenimiento.
+
+![Panel de administración de MACH 1](docs/screenshots/MACH1_Administracion.png)
